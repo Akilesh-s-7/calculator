@@ -1,6 +1,6 @@
 body{
     background: linear-gradient(90deg, rgb(191, 146, 237) 10%, rgb(99, 99, 226) 45%, rgb(109, 83, 189) 100%);
-    padding: 60px;
+    padding: 20px;
 }
 div.container{
     text-align: center;
