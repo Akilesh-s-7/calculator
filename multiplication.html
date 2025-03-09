@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator-multiplicationn</title>
+    <link  rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+   <div class="topbar">
+    <header>MULTIPLICATION<header>
+    </div>
+
+        <!-- getting no of input  from user -->
+    <h1 class="top">ENTER NUMBER OF INPUTS: <h1>
+    <input type="number" id="noofinput" min="1" placeholder=" Enter no of inputs to find Multiplication....."><br><br>
+    <button onclick="createbox(), calbutton()" >SUBMIT</button><br><br>
+    <!-- end -->
+
+    <!-- boxes space -->
+    <div id="input-boxes"></div>
+    <!--end  -->
+    
+   <!--  to calculate results and it disabled until create button is clicked -->
+    <button id="answer" onclick="cal()" disabled>CALCULATE</button>  
+    <button onclick="reset()">RESET</button>
+    <h1 class="top"id="result"></h1>
+    <!-- end -->
+    </div>
+    <footer>
+<h3>Crafted By</h3>
+<h3 class="developername">Akilesh S</h3>
+    </footer>
+    <script>
+        function createbox()
+        {
+            var noofinput=document.getElementById("noofinput").value
+            var inputBoxes=document.getElementById("input-boxes")
+            inputBoxes.innerHTML = ""
+            for( var i=0;i<noofinput;i++){
+                    var input = document.createElement("input")
+                    input.type="number"
+                    input.id=("input"+(i+1))
+                    inputBoxes.appendChild(input)
+                    inputBoxes.appendChild(document.createElement("br"))
+                    inputBoxes.appendChild(document.createElement("br"))
+            }
+        
+        document.getElementById("answer").disabled = false;
+        }
+
+        function cal()
+        {
+            var noofinput=document.getElementById("noofinput").value
+            var  mul=1;
+            for( var i=0;i<noofinput;i++){
+                var values=document.getElementById("input"+(i+1)).value 
+                mul=mul*Number(values)
+            }
+            document.getElementById("result").textContent= "Multiplication of values: "+mul
+        }
+
+        function reset(){
+            document.getElementById("noofinput").value = "";
+            document.getElementById("input-boxes").innerHTML = "";
+            document.getElementById("result").textContent = "";
+            document.getElementById("answer").disabled = true;
+        }
+
+    </script>
+
+
+</body>
+</html>
